@@ -1,0 +1,14 @@
+USE sHastane
+CREATE TABLE tblRandevular
+(
+	ID INT IDENTITY(1,1) NOT NULL,
+	BolumID INT NOT NULL,
+	DoktorID INT NOT NULL,
+	HastaID INT NOT NULL,
+	Tarih Date NOT NULL,
+	Saat Time NOT NULL,
+	PRIMARY KEY(ID),
+	FOREIGN KEY(BolumID) REFERENCES tblBolumler(ID),
+	FOREIGN KEY(DoktorID) REFERENCES tblDoktorlar(ID),
+	FOREIGN KEY(HastaID) REFERENCES tblHastalar(ID)
+	)
