@@ -71,7 +71,7 @@ namespace PersonelTakipSistemi.DataAccess
         public bool Insert(Calisan calisan)
         {
             string sorguCumlesi = $"INSERT INTO tblCalisanlar " +
-                $"(Ad,Soyad,TcNo,PersonelNo,DogumTarihi,IseBaslamaTarihi,Departman,Unvan,Durumu" +
+                $"(Ad,Soyad,TcNo,PersonelNo,IseBaslamaTarihi,DogumTarihi,Departman,Unvan,Durumu)" +
                 $"VALUES " +
                 $"(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9)";
             try
@@ -82,8 +82,8 @@ namespace PersonelTakipSistemi.DataAccess
                     command.Parameters.AddWithValue("@p2", calisan.Soyad);
                     command.Parameters.AddWithValue("@p3", calisan.TcNo);
                     command.Parameters.AddWithValue("@p4", calisan.PersonelNO);
-                    command.Parameters.AddWithValue("@p5", calisan.DogumTarihi);
-                    command.Parameters.AddWithValue("@p6", calisan.IseBaslamaTarihi);
+                    command.Parameters.AddWithValue("@p6", calisan.DogumTarihi);
+                    command.Parameters.AddWithValue("@p5", calisan.IseBaslamaTarihi);
                     command.Parameters.AddWithValue("@p7", calisan.Departman);
                     command.Parameters.AddWithValue("@p8", calisan.Unvan);
                     command.Parameters.AddWithValue("@p9", calisan.Durumu);
@@ -102,7 +102,7 @@ namespace PersonelTakipSistemi.DataAccess
         }
         public bool Update(Calisan calisan)
         {
-            string sorguCumlesi = $"UPDATE tblCalisanlar SET Ad=@p1,Soyad=@p2,TcNo=@p3,PersonelNo=@p4,DogumTarihi=@p5,IseBaslamaTarihi=@p6,Departman=@p7,Unvan=@p8,Durumu=@p9" +
+            string sorguCumlesi = $"UPDATE tblCalisanlar SET Ad=@p1,Soyad=@p2,TcNo=@p3,PersonelNo=@p4,IseBaslamaTarihi=@p5,DogumTarihi=@p6,Departman=@p7,Unvan=@p8,Durumu=@p9" +
                 $"WHERE ID=@p10";
             try
             {
@@ -112,8 +112,8 @@ namespace PersonelTakipSistemi.DataAccess
                     command.Parameters.AddWithValue("@p2", calisan.Soyad);
                     command.Parameters.AddWithValue("@p3", calisan.TcNo);
                     command.Parameters.AddWithValue("@p4", calisan.PersonelNO);
-                    command.Parameters.AddWithValue("@p5", calisan.DogumTarihi);
-                    command.Parameters.AddWithValue("@p6", calisan.IseBaslamaTarihi);
+                    command.Parameters.AddWithValue("@p5", calisan.IseBaslamaTarihi);
+                    command.Parameters.AddWithValue("@p6", calisan.DogumTarihi);
                     command.Parameters.AddWithValue("@p7", calisan.Departman);
                     command.Parameters.AddWithValue("@p8", calisan.Unvan);
                     command.Parameters.AddWithValue("@p9", calisan.Durumu);
@@ -152,9 +152,9 @@ namespace PersonelTakipSistemi.DataAccess
             }
             finally { SQLBaglanti.BaglantiKapat(); }
         }
-        public bool Delete(string kosulCumlesi)
+        public bool Delete(string kosulCumlesi="")
         {
-            string sorguCumlesi = $"DELETE FROM tblCalisanlar @p1";
+            string sorguCumlesi = $"DELETE FROM tblCalisanlar {kosulCumlesi}";
             try
             {
                 using (SqlCommand command=new SqlCommand(sorguCumlesi,SQLBaglanti.Baglanti))
@@ -172,5 +172,6 @@ namespace PersonelTakipSistemi.DataAccess
             }
             finally { SQLBaglanti.BaglantiKapat();  }
         }
+        
     }
 }
