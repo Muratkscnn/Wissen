@@ -14,6 +14,8 @@ namespace PersonelTakipSistemi
 {
     public partial class FormAna : Form
     {
+        string orjinalPersonelNO = "1";
+        string orjinalTcNo = "1";
         int secilenID = 0;
         CalisanDAL calisanDAL = new CalisanDAL();
         Calisan calisan = new Calisan();
@@ -68,8 +70,8 @@ namespace PersonelTakipSistemi
             secilenID = Convert.ToInt32(dgvCalisanlar.SelectedRows[0].Cells[0].Value.ToString());
             txtAd.Text = dgvCalisanlar.SelectedRows[0].Cells[1].Value.ToString();
             txtSoyad.Text = dgvCalisanlar.SelectedRows[0].Cells[2].Value.ToString();
-            txtTcNo.Text = dgvCalisanlar.SelectedRows[0].Cells[3].Value.ToString();
-            txtPersonelNo.Text = dgvCalisanlar.SelectedRows[0].Cells[4].Value.ToString();
+            orjinalTcNo=txtTcNo.Text = dgvCalisanlar.SelectedRows[0].Cells[3].Value.ToString();
+            orjinalPersonelNO = txtPersonelNo.Text = dgvCalisanlar.SelectedRows[0].Cells[4].Value.ToString();
             dtpDogumTarihi.Value = Convert.ToDateTime(dgvCalisanlar.SelectedRows[0].Cells[5].Value.ToString());
             dtpIseBaslamaTarihi.Value = Convert.ToDateTime(dgvCalisanlar.SelectedRows[0].Cells[6].Value.ToString());
             cmbDepartman.Text = dgvCalisanlar.SelectedRows[0].Cells[7].Value.ToString();
@@ -105,6 +107,7 @@ namespace PersonelTakipSistemi
         }
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+
             if (!BlankControl())
             {
                 MessageBox.Show("Lütfen tüm alanları Doldurunuz..");
@@ -126,7 +129,6 @@ namespace PersonelTakipSistemi
                     Reflesh();
                     MessageBox.Show("Kayıt Başarılı..");
                 }
-
 
             }
         }
@@ -151,14 +153,14 @@ namespace PersonelTakipSistemi
                 }
 
             }
-            
+
         }
         void Cancel()
         {
             Reflesh();
             dgvCalisanlar.ClearSelection();
             secilenID = 0;
-            
+
         }
 
         private void btnHepsiniSil_Click(object sender, EventArgs e)
@@ -196,10 +198,10 @@ namespace PersonelTakipSistemi
                 if (item.Tag == null) continue;
                 string fieldName = item.Tag.ToString();
                 string value = string.Empty;
-                if (string.IsNullOrEmpty(item.Text) || item.Text == " ") continue;               
-                if (item.GetType()==typeof(DateTimePicker))
+                if (string.IsNullOrEmpty(item.Text) || item.Text == " ") continue;
+                if (item.GetType() == typeof(DateTimePicker))
                 {
-                    value =Convert.ToDateTime(item.Text).ToString("yyyy-MM-dd");
+                    value = Convert.ToDateTime(item.Text).ToString("yyyy-MM-dd");
                     alanlar.Add($"{fieldName} = '{value}'");
 
                 }
@@ -208,7 +210,7 @@ namespace PersonelTakipSistemi
                     value = item.Text;
                     alanlar.Add($"{fieldName} = '{value}'");
                 }
-                
+
                 else
                 {
                     value = item.Text;
@@ -216,16 +218,73 @@ namespace PersonelTakipSistemi
 
                 }
             }
-            if (alanlar.Count>0)
+            if (alanlar.Count > 0)
             {
                 queryString = $"WHERE {string.Join(" AND ", alanlar)}";
             }
             return queryString;
-            
+
         }
         private void btnBul_Click(object sender, EventArgs e)
         {
             dgvCalisanlar.DataSource = calisanDAL.GetAll(CreateQueryString());
         }
+
+        private void btnGetir_Click(object sender, EventArgs e)
+        {
+            calisan = calisanDAL.Get(CreateQueryString());
+            if (calisan != null)
+            {
+                txtAd.Text = calisan.Ad;
+                txtSoyad.Text = calisan.Soyad;
+                txtPersonelNo.Text = calisan.PersonelNO;
+                txtTcNo.Text = calisan.TcNo;
+                dtpDogumTarihi.Format = DateTimePickerFormat.Long;
+                dtpDogumTarihi.Value = calisan.DogumTarihi;
+                dtpIseBaslamaTarihi.Format = DateTimePickerFormat.Long;
+                dtpIseBaslamaTarihi.Value = calisan.IseBaslamaTarihi;
+                cmbDepartman.Text = calisan.Departman;
+                cmbUnvan.Text = calisan.Unvan;
+                cmbDurumu.Text = calisan.Durumu;
+
+            }
+
+
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            if (secilenID == 0)
+            {
+                MessageBox.Show("Güncellemek istediğiniz kaydı seçiniz.");
+            }
+            else if (!BlankControl())
+            {
+                MessageBox.Show("Lütfen tüm alanları Doldurunuz..");
+            }
+            else
+            {
+                
+                calisan.Ad = txtAd.Text;
+                calisan.Soyad = txtSoyad.Text;
+                calisan.TcNo = txtTcNo.Text;
+                calisan.PersonelNO = txtPersonelNo.Text;
+                calisan.DogumTarihi = dtpDogumTarihi.Value;
+                calisan.IseBaslamaTarihi = dtpIseBaslamaTarihi.Value;
+                calisan.Departman = cmbDepartman.SelectedItem.ToString();
+                calisan.Unvan = cmbUnvan.SelectedItem.ToString();
+                calisan.Durumu = cmbDurumu.SelectedItem.ToString();
+                calisan.ID = secilenID;
+                bool result = calisanDAL.Update(calisan,orjinalPersonelNO,orjinalTcNo);
+                if (result)
+                {
+                    Reflesh();
+                    MessageBox.Show("Düzenleme Başarılı..");
+                }
+            }
+        }
     }
 }
+
+

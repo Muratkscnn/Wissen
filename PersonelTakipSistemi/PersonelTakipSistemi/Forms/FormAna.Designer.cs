@@ -373,6 +373,7 @@ namespace PersonelTakipSistemi
             this.btnGuncelle.TabIndex = 10;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = false;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnGetir
             // 
@@ -383,6 +384,7 @@ namespace PersonelTakipSistemi
             this.btnGetir.TabIndex = 14;
             this.btnGetir.Text = "GETİR";
             this.btnGetir.UseVisualStyleBackColor = false;
+            this.btnGetir.Click += new System.EventHandler(this.btnGetir_Click);
             // 
             // dgvCalisanlar
             // 
