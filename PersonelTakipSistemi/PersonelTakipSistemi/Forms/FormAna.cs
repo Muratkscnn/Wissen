@@ -120,8 +120,8 @@ namespace PersonelTakipSistemi
                 calisan.PersonelNO = txtPersonelNo.Text;
                 calisan.DogumTarihi = dtpDogumTarihi.Value;
                 calisan.IseBaslamaTarihi = dtpDogumTarihi.Value;
-                calisan.Departman = cmbDepartman.SelectedItem.ToString();
-                calisan.Unvan = cmbUnvan.SelectedItem.ToString();
+                calisan.DepartmanID = 1;
+                calisan.UnvanID =1;
                 calisan.Durumu = cmbDurumu.SelectedItem.ToString();
                 bool result = calisanDAL.Insert(calisan);
                 if (result)
@@ -243,8 +243,8 @@ namespace PersonelTakipSistemi
                 dtpDogumTarihi.Value = calisan.DogumTarihi;
                 dtpIseBaslamaTarihi.Format = DateTimePickerFormat.Long;
                 dtpIseBaslamaTarihi.Value = calisan.IseBaslamaTarihi;
-                cmbDepartman.Text = calisan.Departman;
-                cmbUnvan.Text = calisan.Unvan;
+                cmbDepartman.Text = "1";
+                cmbUnvan.Text = "1";
                 cmbDurumu.Text = calisan.Durumu;
 
             }
@@ -272,8 +272,8 @@ namespace PersonelTakipSistemi
                 calisan.PersonelNO = txtPersonelNo.Text;
                 calisan.DogumTarihi = dtpDogumTarihi.Value;
                 calisan.IseBaslamaTarihi = dtpIseBaslamaTarihi.Value;
-                calisan.Departman = cmbDepartman.SelectedItem.ToString();
-                calisan.Unvan = cmbUnvan.SelectedItem.ToString();
+                calisan.DepartmanID = 1;
+                calisan.UnvanID = 1;
                 calisan.Durumu = cmbDurumu.SelectedItem.ToString();
                 calisan.ID = secilenID;
                 bool result = calisanDAL.Update(calisan,orjinalPersonelNO,orjinalTcNo);

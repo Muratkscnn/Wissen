@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7F4AD03-ADD5-4983-B1AD-477FAD07A122}</ProjectGuid>
+    <ProjectGuid>{1942DF28-B859-46BB-A2E6-17B2940E265D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PersonelTakipSistemi</RootNamespace>
-    <AssemblyName>PersonelTakipSistemi</AssemblyName>
+    <RootNamespace>SatisProjesi</RootNamespace>
+    <AssemblyName>SatisProjesi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,22 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\CalisanDAL.cs" />
-    <Compile Include="Entities\Calisan.cs" />
-    <Compile Include="Entities\Departman.cs" />
-    <Compile Include="Entities\IBaseEntity.cs" />
-    <Compile Include="Entities\Unvan.cs" />
-    <Compile Include="Forms\FormAna.cs">
+    <Compile Include="DataAccess\SatislarDAL.cs" />
+    <Compile Include="DataAccess\UrunDAL.cs" />
+    <Compile Include="Entity\Satis.cs" />
+    <Compile Include="Entity\Urun.cs" />
+    <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAna.Designer.cs">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\SQLBaglanti.cs" />
-    <EmbeddedResource Include="Forms\FormAna.resx">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <Compile Include="Tools\Baglanti.cs" />
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -86,5 +85,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

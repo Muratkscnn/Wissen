@@ -18,8 +18,11 @@ namespace PersonelTakipSistemi.Entities
         public string PersonelNO { get; set; }
         public DateTime DogumTarihi { get; set; }
         public DateTime IseBaslamaTarihi { get; set; }
+        //public int DepartmanID { get; set; }
         public string Departman { get; set; }
         public string Unvan { get; set; }
+
+        //public int UnvanID { get; set; }
         public string Durumu { get; set; }
     }
 }

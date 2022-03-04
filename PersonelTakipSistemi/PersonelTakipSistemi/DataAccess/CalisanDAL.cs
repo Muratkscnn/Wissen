@@ -31,7 +31,7 @@ namespace PersonelTakipSistemi.DataAccess
                 List<Calisan> calisanlar = new List<Calisan>();
                 //using satırında yaratılan command adlı nesne sadece bu scopeda yaşayacak daha sonra yok olacak.
                 //bu nesenenin yok edilmesini garbage Collector'ün insiyatifine bırakmamış olduk..
-                using (SqlCommand command = new SqlCommand($"SELECT * FROM tblCalisanlar {kosulCumlesi}", SQLBaglanti.Baglanti))
+                using (SqlCommand command = new SqlCommand($"SELECT * FROM vCalisanlar {kosulCumlesi}", SQLBaglanti.Baglanti))
                 {
                     SQLBaglanti.BaglantiAc();
                     SqlDataReader reader = command.ExecuteReader();
@@ -47,7 +47,7 @@ namespace PersonelTakipSistemi.DataAccess
                                 PersonelNO = reader["PersonelNo"].ToString(),
                                 DogumTarihi = Convert.ToDateTime(reader["DogumTarihi"]),
                                 IseBaslamaTarihi = Convert.ToDateTime(reader["IseBaslamaTarihi"]),
-                                Departman = reader["Departman"].ToString(),
+                                Departman =reader["Departman"].ToString(),
                                 Unvan = reader["Unvan"].ToString(),
                                 Durumu = reader["Durumu"].ToString()
                             };
@@ -70,7 +70,7 @@ namespace PersonelTakipSistemi.DataAccess
 
 
         }
-        public bool Insert(Calisan calisan)
+       public bool Insert(Calisan calisan)
         {
             if (Kontrol($"WHERE PersonelNo={calisan.PersonelNO}")==1)
             {
@@ -85,7 +85,7 @@ namespace PersonelTakipSistemi.DataAccess
             else
             {
                 string sorguCumlesi = $"INSERT INTO tblCalisanlar " +
-                    $"(Ad,Soyad,TcNo,PersonelNo,IseBaslamaTarihi,DogumTarihi,Departman,Unvan,Durumu)" +
+                    $"(Ad,Soyad,TcNo,PersonelNo,IseBaslamaTarihi,DogumTarihi,DepartmanID,UnvanID,Durumu)" +
                     $"VALUES " +
                     $"(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9)";
                 try
@@ -98,8 +98,8 @@ namespace PersonelTakipSistemi.DataAccess
                         command.Parameters.AddWithValue("@p4", calisan.PersonelNO);
                         command.Parameters.AddWithValue("@p6", calisan.DogumTarihi);
                         command.Parameters.AddWithValue("@p5", calisan.IseBaslamaTarihi);
-                        command.Parameters.AddWithValue("@p7", calisan.Departman);
-                        command.Parameters.AddWithValue("@p8", calisan.Unvan);
+                        command.Parameters.AddWithValue("@p7", calisan.DepartmanID);
+                        command.Parameters.AddWithValue("@p8", calisan.UnvanID);
                         command.Parameters.AddWithValue("@p9", calisan.Durumu);
                         SQLBaglanti.BaglantiAc();
                         command.ExecuteNonQuery();
@@ -117,32 +117,20 @@ namespace PersonelTakipSistemi.DataAccess
         }
         public bool Update(Calisan calisan,string orjinalPersonelNo,string orjinalTcNo)
         {
-            bool x = true;
-            if (orjinalPersonelNo != calisan.PersonelNO)
+            if (orjinalPersonelNo != calisan.PersonelNO && Kontrol($"WHERE PersonelNo='{calisan.PersonelNO}'") == 1)
             {
-                
-                if (Kontrol($"WHERE PersonelNo='{calisan.PersonelNO}'") == 1)
-                {
-                    MessageBox.Show("Bu Personel Numarası Kullanılıyor..");
-                    x = false;
-                    return x;
-                } 
+                MessageBox.Show("Bu Personel Numarası Kullanılıyor..");
+                return false;
             }
-             else if (orjinalTcNo != calisan.TcNo)
-                {
-                    if (Kontrol($"WHERE TcNo='{calisan.TcNo}'") == 1)
-                    {
-                        MessageBox.Show("Bu Tc Numarası Kullanılıyor..");
-                        x = false;
-                        return x;
-                    }
-                }
-            
-            return x;
-            if (x)       
+            else if (orjinalTcNo != calisan.TcNo && Kontrol($"WHERE TcNo='{calisan.TcNo}'") == 1)
             {
-         
-            string sorguCumlesi = $"UPDATE tblCalisanlar SET Ad=@p1,Soyad=@p2,TcNo=@p3,PersonelNo=@p4,DogumTarihi=@p5,IseBaslamaTarihi=@p6,Departman=@p7,Unvan=@p8,Durumu=@p9 WHERE ID=@p10";
+                MessageBox.Show("Bu TC Kimlik Numarası Kullanılıyor..");
+                return false;
+            }
+            else
+            {
+
+                string sorguCumlesi = $"UPDATE tblCalisanlar SET Ad=@p1,Soyad=@p2,TcNo=@p3,PersonelNo=@p4,DogumTarihi=@p5,IseBaslamaTarihi=@p6,DepartmanID=@p7,UnvanID=@p8,Durumu=@p9 WHERE ID=@p10";
             try
             {
                 using (SqlCommand command = new SqlCommand(sorguCumlesi, SQLBaglanti.Baglanti))
@@ -153,8 +141,8 @@ namespace PersonelTakipSistemi.DataAccess
                     command.Parameters.AddWithValue("@p4", calisan.PersonelNO);
                     command.Parameters.AddWithValue("@p6", calisan.IseBaslamaTarihi);
                     command.Parameters.AddWithValue("@p5", calisan.DogumTarihi);
-                    command.Parameters.AddWithValue("@p7", calisan.Departman);
-                    command.Parameters.AddWithValue("@p8", calisan.Unvan);
+                    command.Parameters.AddWithValue("@p7", calisan.DepartmanID);
+                    command.Parameters.AddWithValue("@p8", calisan.UnvanID);
                     command.Parameters.AddWithValue("@p9", calisan.Durumu);
                     command.Parameters.AddWithValue("@p10", calisan.ID);
                     SQLBaglanti.BaglantiAc();
@@ -245,8 +233,8 @@ namespace PersonelTakipSistemi.DataAccess
                                     PersonelNO = reader["PersonelNo"].ToString(),
                                     DogumTarihi = Convert.ToDateTime(reader["DogumTarihi"]),
                                     IseBaslamaTarihi = Convert.ToDateTime(reader["IseBaslamaTarihi"]),
-                                    Departman = reader["Departman"].ToString(),
-                                    Unvan = reader["Unvan"].ToString(),
+                                    DepartmanID =Convert.ToInt32(reader["DepartmanID"]),
+                                    UnvanID =Convert.ToInt32(reader["UnvanID"]),
                                     Durumu = reader["Durumu"].ToString()
                                 };
                             }
@@ -278,6 +266,7 @@ namespace PersonelTakipSistemi.DataAccess
             }
             return adet;
         }
+      
     }
 }
   
