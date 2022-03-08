@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calışma</title>
+    <style>
+        .button{
+            border: 1px;
+            border-style: solid;
+            border-radius: 1cm;
+            border-color: black;
+            background-color: black;
+            color: white;
+            
+        }
+        select{
+            width: 175px;
+            border: 1px;
+            border-style: solid;
+            border-radius: 1cm;
+            border-color: black;
+        }
+        table,caption{
+            background-color:coral  ;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+        
+        <form action="">
+            <table align="center" style="width: 300px;">
+                <caption style="font-size: 25px;">Öğrenci Kayıt Formu</caption>
+                <tr><td>Ad:</td><td><input type="text" name="Ad"></td></tr>
+                <tr><td>Soyad:</td><td><input type="text" name="Soyad"></td></tr>
+                <tr><td>Yaş:</td><td><input type="text" name="yas"></td></tr>
+                <tr><td>Cinsiyet</td><td>Erkek<input type="radio" name="Cinsiyet" id="">&nbsp;Kadın<input type="radio" name="Cinsiyet" id=""></td></tr>
+                <tr><td>Bölüm:</td><td><select name="bolumler" id="">
+                    <option value="">Mekatronik Mühendisliği</option>
+                    <option value="">Makine Mühendisliği</option>
+                    <option value="">Bilgisayar Mühendisliği</option>
+                    <option value="">Elektrik Elektronik Mühendisliği</option>
+                </select></td></tr>
+                <tr><td>İlgilendiği Spor Dalı:</td><td><select name="bolumler" id="">
+                    <option value="">Basketbol</option>
+                    <option value="">Futbol</option>
+                    <option value="">Voleybol</option>
+                    <option value="">Su Topu</option>
+                </select></td></tr>
+                <tr><td>Kulüp:</td><td><select name="bolumler" id="">
+                    <option value="">Spor Kulübü</option>
+                    <option value="">Müzik Kulubü</option>
+                    <option value="">Satranç Kulubü</option>
+                    <option value="">Yazılım Kulubü</option>
+                </select></td></tr>
+                <tr><td align="center" colspan="2"><input type="button" value="Gönder" class="button">&nbsp;&nbsp;<input type="reset" value="Temizle" class="button"></td></tr>
+
+            </table>
+        </form>
+</body>
+</html>

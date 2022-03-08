@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Site</title>
+</head>
+<style>
+    .kapsayici{
+        margin: auto;
+        max-width: 900px;
+        text-align: center;
+        min-height: 600px;       
+    }
+    header{
+        
+        max-width: 900px;
+        height: 100px;
+        background-color: gray;
+    }
+    nav{
+        max-width: 900px;
+        height: 60px;
+       
+    }
+    aside{
+        float: left;
+        width: 300px;
+        min-height: 300px;
+    }
+    
+    section{
+        float: left;
+        min-width: 300px;
+        min-height: 300px;
+    }
+    footer{
+        float: left;
+        width: 900px;
+        min-height: 100px;       
+    }
+    .banner{
+        font-size: 36pt;
+        font-family: fantasy;
+        color: darkred;
+    }
+    .menubar{
+        width: 900px;
+        height: 50px;
+        background-color: darkred;
+    }
+    .menu{
+        float: left;
+        width: 150px;
+        height: 50px;
+        color: white;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16pt;
+        text-decoration: none;
+    }
+    .yanmenubar{
+        width: 300px;
+        height: 300px;
+        background-color: darkred;
+    }
+    .sonyazilar a{
+        text-decoration: none;
+        color: white;
+    }
+    .menu a{
+        text-decoration: none;
+        color: white;
+    }
+    .menu :hover{
+        color: yellow;
+    }
+    .sonyazilar{
+        width: 295px;
+        height: auto;
+        color: white;
+        text-align: left;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16pt;
+        text-decoration: none;
+    }
+    .sonyazilar :hover{
+        color: yellow;
+    }
+    
+</style>
+<body>
+    <div class="kapsayici">
+        <header>
+           <div class="banner">Wissen Akademie Sabah Web Grubu</div>
+        </header>
+        <nav><div class="menubar">  
+            <div class="menu "><a href="index.html">Anasayfa</a></div>
+            <div class="menu "><a href="benkimim.html">Ben Kimim</a></div>
+            <div class="menu "><a href="Blog.html">Blog Yazılarım</a></div>
+            <div class="menu "><a href="İletişim.html">İletişim</a></div>
+        </div>
+        </nav>
+        <aside>
+        <div class="yanmenubar">  
+            <div class="sonyazilar"><a href="index.html">Benzin bugün ne kadar oldu?</a></div>
+            <div class="sonyazilar "><a href="reiz.jpg">Tayyip baba ne zaman ölüyor</a></div>
+            <div class="sonyazilar "><a href="Blog.html">Fenerbahçe ne zaman şampiyon olacak?</a></div>
+            <div class="sonyazilar "><a href="İletişim.html">Arif'in Manchester'a attığı gol</a></div>
+        </div></aside>
+
+        <section><form action="">
+            <table  style="width: 300px;">
+                <caption style="font-size: 25px;">Öğrenci Kayıt Formu</caption>
+                <tr><td>Ad:</td><td><input type="text" name="Ad"></td></tr>
+                <tr><td>Soyad:</td><td><input type="text" name="Soyad"></td></tr>
+                <tr><td>Yaş:</td><td><input type="text" name="yas"></td></tr>
+                <tr><td>Cinsiyet</td><td>Erkek<input type="radio" name="Cinsiyet" id="">&nbsp;Kadın<input type="radio" name="Cinsiyet" id=""></td></tr>
+                <tr><td>Bölüm:</td><td><select name="bolumler" id="">
+                    <option value="">Mekatronik Mühendisliği</option>
+                    <option value="">Makine Mühendisliği</option>
+                    <option value="">Bilgisayar Mühendisliği</option>
+                    <option value="">Elektrik Elektronik Mühendisliği</option>
+                </select></td></tr>
+                <tr><td>İlgilendiği Spor Dalı:</td><td><select name="bolumler" id="">
+                    <option value="">Basketbol</option>
+                    <option value="">Futbol</option>
+                    <option value="">Voleybol</option>
+                    <option value="">Su Topu</option>
+                </select></td></tr>
+                <tr><td>Kulüp:</td><td><select name="bolumler" id="">
+                    <option value="">Spor Kulübü</option>
+                    <option value="">Müzik Kulubü</option>
+                    <option value="">Satranç Kulubü</option>
+                    <option value="">Yazılım Kulubü</option>
+                </select></td></tr>
+                <tr><td align="center" colspan="2"><input type="button" value="Gönder" class="button">&nbsp;&nbsp;<input type="reset" value="Temizle" class="button"></td></tr>
+
+            </table>
+        </form></section>
+        <section>İÇERİK 2</section>
+        <footer>FOOTER</footer>
+    </div>
+</body>
+</html>
