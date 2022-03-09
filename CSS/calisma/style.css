@@ -1,0 +1,42 @@
+.menu{
+    margin-left: 10px;
+    float: left;
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
+.menu:hover{
+  box-shadow: 5px 5px 5px yellow;
+  color: yellow;
+  transition: color 2s, box-shadow 2s;
+  width: 175px;
+  height: 50px;
+  
+
+}
+.header{
+    padding: 20px;
+    margin-left: 200px;
+    border: black solid 1px;
+    width: 825px;
+    height: auto;
+    overflow: auto;
+    background-color: gray;
+}
+.circlebutton{
+    border: none;
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    border-radius: 50%;
+}
+.circlebutton:hover{
+    background-color: black;
+}
