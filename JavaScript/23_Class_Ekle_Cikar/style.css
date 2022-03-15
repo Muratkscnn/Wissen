@@ -1,0 +1,20 @@
+.error{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    padding: 10px;
+    border: 1px dashed red;
+    background-color: red;
+}
+.succes{
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 200px;
+    padding: 10px;
+    border: 1px solid green;
+    background-color: green;
+}
+p:hover{
+    background-color: white;
+}

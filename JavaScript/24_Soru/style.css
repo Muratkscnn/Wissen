@@ -1,0 +1,15 @@
+.kaldi{
+    border: 1px solid;
+    margin-top: 5px;
+    width: 50px;
+    background-color: red;
+    color: white;
+
+}
+.gecti{
+    margin-top: 5px;
+    border: 1px solid;
+    width: 50px;
+    background-color: green;
+    color: white;
+}
