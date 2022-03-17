@@ -1,0 +1,108 @@
+.body{
+    
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    border-radius: 20px;
+    width: 1200px;
+    background-color: rgb(32, 77, 129, 0.01);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.navbar{
+    width: 700px;
+}
+   
+
+.search{
+    width: 200px;
+    margin-top: 30px;
+}
+#search{
+    text-align: center;
+    border-radius: 10px;
+    width: 100px;
+    height: 25px;
+    transition: width 0.5s;
+}
+#search:focus{
+    width: 180px;
+}
+.navbar a{
+    background-color: red;
+    height: 20px;
+    border: 2px solid black;
+    border-width: 0px 4px 4px 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    width: 100px;    
+    text-align: center;
+}
+
+.logo{
+    width:150px ;
+    height:88px ;
+}
+img{
+    border: 2px solid ;
+    border-radius: 20px;
+    margin-left: 0px;
+}
+
+.content{
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.icerik1{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    border: 2px solid red;
+}
+.icerik1 input{
+    background-color: rgb(32, 77, 129, 0.01);
+
+}
+.navbar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+   
+   
+  .navbar ul li ul{
+    display: none;
+    margin-top: 0px;
+  }
+   
+  .navbar ul li:hover ul{
+    display: block;
+    position: absolute;
+    
+  }  
+  .navbar ul li ul a{
+      background-color: rgb(17, 11, 15);
+  }
+  .navbar li a:hover{
+    background: red;
+    border-width: 4px 0px 0px 4px;
+    transition: .5s;
+  }
+  

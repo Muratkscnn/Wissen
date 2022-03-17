@@ -1,0 +1,10 @@
+#search{
+    width: 100px;
+    transition: width 0.5s;
+}
+#search:focus{
+    width: 700px;
+}
+.box{
+    width: 300px;
+}
