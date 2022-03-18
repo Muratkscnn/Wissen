@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+
+
+    <style>
+        
+        #newTaskBox{
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            width: 250px;
+            margin: auto;
+            border: 1px solid rgb(65, 32, 109);
+            border-radius: 5px;
+            height: 50px;
+            margin-top: 25px;
+        }
+        #newTaskTextBox{
+            width: 80%;
+            height: 30px;
+            border: 1px solid rgb(65, 32, 109);
+            border-radius: 5px;
+        }
+        #newTaskButton{
+            width: 30px;
+            height: 30px;
+            border: 1px solid rgb(65, 32, 109);
+            border-radius: 5px;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: 1s;
+        }
+        #newTaskButton:hover{
+            background-color: darkgray;
+
+        }
+        #tasksHeaderBox{
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            
+        }
+        #tasksHeader{
+            width: 260px;
+            border: 1px solid black;
+            
+        }
+        #taskListBox li{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            width: 260px;
+            padding: 0 5px;
+            background-color: brown;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px 0px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="todoBox">
+        <div id="newTaskBox">
+            <input type="text" name="newTaskTextBox" placeholder="Yeni Görevi giriniz.." id="newTaskTextBox">
+            <button id="newTaskButton" name="newTaskButton">+</button>
+        </div>
+        <div id="tasks">
+            <div id="tasksHeaderBox"><h2 id="tasksHeader">Görevler</h2>
+            <div id="taskListBox">
+                <ul></ul>
+            </div>        
+            <button id="clearAll" name="clearAll">Hepsini Sil</button>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="js/all.min.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
