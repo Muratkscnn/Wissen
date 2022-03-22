@@ -65,9 +65,7 @@ function newTask()
           deleteTaskButtons[i].addEventListener("click",e =>{
               
               e.target.parentElement.remove();
-             // html=ul.innerHTML;
-              html=html.replace(e.target.parentElement.innerHTML,"");
-              
+              html=ul.innerHTML;             
           })
           
             

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+    <button onclick="getSuppliers()">Get Products</button>
+    <ul id="suppliers"></ul>
+
+</body>
+<script>
+
+    function getSuppliers() {
+        fetch("https://northwind.vercel.app/api/suppliers")
+        .then(res => res.json())
+        .then((data) => {
+            const datafilter=data.filter(q=>q.address.country=="USA") 
+            datafilter.forEach(element => {
+            const liElement = document.createElement("li");
+            liElement.innerHTML=element.companyName;
+            document.getElementById("suppliers").appendChild(liElement)
+            });
+            
+        })
+        
+    }
+    
+</script>
+</html>
