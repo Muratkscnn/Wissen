@@ -1,0 +1,15 @@
+.input-group-text{
+    background-color: white !important;
+    border-right: none !important;
+}
+#text{
+    border-left: none !important; 
+}
+#text:focus{
+    box-shadow: none !important;
+    
+}
+#text:focus{
+    border-color:  #ced4da !important;
+    
+}
