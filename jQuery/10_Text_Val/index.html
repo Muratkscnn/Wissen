@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <button id="text-get">Text()-Get</button>
+    <button id="html-get">Html()-Get</button>
+    <button id="val-get">Val()-Get</button>
+    <button id="text-set">Text()-set</button>
+    <button id="html-set">Html()-Set</button>
+    <button id="val-set">Val()-Set</button>
+
+    <p>Lorem ipsum <span>dolor</span> sit amet consectetur adipisicing elit. Architecto, aut.</p>
+    <input type="text" name="" id="" value="Tamam">
+
+    <script>
+        $(document).ready(function() {
+            $("#text-get").click(function() {
+                var text=$("p").text();
+                alert(text);
+            });
+            $("#html-get").click(function() {
+            var html=$("p").html();
+            alert(html);
+        })
+        $("#val-get").click(function() {
+            var val=$("input").val();
+            alert(val);
+        })
+        $("#text-set").click(function() {
+            $("p").text("Selam bu değişen metin")
+        })
+        $("#html-set").click(function() {
+            $("p").html("<h1>Selam bu değişen metin</h1>")
+        })
+        $("#val-set").click(function() {
+            $("input").val("JQuery")
+        })
+        });
+        
+    </script>
+</body>
+</html>

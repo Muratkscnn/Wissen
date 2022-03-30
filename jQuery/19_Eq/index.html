@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <button id="eq-2">Seç-2</button>
+    <button id="eq-4">Seç-4</button>
+    <button id="eq-ters">Seç-ters1</button>
+    <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <p class="custom">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <p class="custom">Lorem, ipsum dolor.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique blanditiis consequatur qui?</p>
+    <p class="custom">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci sapiente sed expedita molestiae
+        incidunt voluptas maiores, nam ab.
+    </p>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#eq-2").click(function() {
+                $("p").eq(2).css("background-color","red");
+            })
+            $("#eq-4").click(function() {
+                $("p").eq(4).css("background-color","red");
+            })
+            $("#eq-ters").click(function() {
+                $("p").eq(-1).css("background-color","red");
+            })
+        })
+    </script>
+    
+</body>
+
+</html>

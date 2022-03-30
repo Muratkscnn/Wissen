@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        #errorMessage{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <label for="">Lütfen Sadece Rakam Giriniz</label>
+    <input type="text" id="rakam">
+    <label for="">Lütfen Sadece harf Giriniz</label>
+    <input type="text" id="harf">
+    <span id="errorMessage"></span>
+
+    <script>
+        $(document).ready(function() {
+           
+
+            // $("#rakam").keypress(function(tus) {
+            //     if ((tus.which!=8 && tus.which!=0) && (tus.which<48 || tus.which>57)) {
+            //         $("#errorMessage").html("lütfen sadece rakam girin!").show().fadeOut("slow");
+            //         return false;
+            //     }
+            // })
+            $("#rakam").keyup(function(tus) {
+                if (this.value.match(/[^0-9]/)) {
+                    this.value=this.value.replace(/[^0-9]/,"")
+                }
+            })
+            $("#harf").keyup(function(tus) {
+                if (this.value.match(/[^a-zA-Z]/g)) {
+                    this.value=this.value.replace(/[^a-zA-Z]/g,"")
+                }
+            })
+        })
+    </script>
+</body>
+</html>

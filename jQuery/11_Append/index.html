@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <button id="append">append</button>
+    <button id="prepend">prepend</button>
+    <button id="after">after</button>
+    <button id="before">before</button>
+
+    <ol id="liste">
+        <li>JavaScript</li>
+        <li>JQuery</li>
+    </ol>
+    <p id="p">Lorem ipsum dolor sit amet.</p>
+
+    <script>
+        $(document).ready(function() {
+            $("#append").click(function () {
+                $("#liste").append("<li>React</li>")
+                $("#p").append('<span style="color:blue;">MARABA</span>')
+            })
+            $("#prepend").click(function () {
+                $("#liste").prepend("<li>Angular</li>")
+                $("#p").prepend('<span style="color:blue;">MARABA </span>')
+            })
+            $("#after").click(function () {
+                $("#liste").after("<li>Bootstrap</li>")
+                $("#p").after('<span style="color:blue;">MARABA </span>')
+            })
+            $("#before").click(function () {
+                $("#liste").before("<li>Css</li>")
+                $("#p").before('<span style="color:blue;">MARABA </span>')
+            })
+        })
+    </script>
+</body>
+</html>

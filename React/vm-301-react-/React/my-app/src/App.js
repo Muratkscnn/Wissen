@@ -6,14 +6,15 @@ import MetalSample from "./jsxSample/metalSample/MetalSample";
 import OneWayBinding from "./jsxSample/OneWayBinding";
 import SupplierPage from "./jsxSample/propSample/SupplierPage";
 import StateSample from "./jsxSample/stateSample/StateSample";
-
+import 'antd/dist/antd.css';
+import AntdSample from "./jsxSample/antdSample/AntdSample";
 
 
 
 function App() {
   return (
   <>
-    <EffectPage></EffectPage>
+    <AntdSample></AntdSample>
   </>
   
 );

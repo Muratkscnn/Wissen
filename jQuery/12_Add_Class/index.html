@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .ornek {
+            padding: 30px;
+            font-size: 25px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="addClass">addClass</button>
+    <button id="removeClass">removeClass</button>
+    <button id="toggleClass">toggleClass</button>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam animi possimus libero a, veniam
+        necessitatibus reiciendis illum dolores quod accusantium.</p>
+    <script>
+        $(document).ready(function () {
+            $("#addClass").click(function() {
+            $("p").addClass("ornek")
+            })
+            $("#removeClass").click(function() {
+            $("p").removeClass("ornek")
+            })
+            $("#toggleClass").click(function() {
+            $("p").toggleClass("ornek")
+            })
+        })
+    </script>
+</body>
+
+</html>
