@@ -1,0 +1,28 @@
+﻿@{
+    string kurumAd = "Wissen Akademie";
+    string[] adlar = { "Recep", "Mikail", "Aslı", "Alex", "Van Hoijdonk", "Muslera" };
+    string[] menu = { "Anasayfa", "Hakkında", "Projeler", "iletişim" };
+    int yas = 25;
+
+}
+<div >
+    <ul style="display:flex; list-style:none;">
+        @{
+            foreach (var item in menu)
+            {
+                <li style="padding:20px">@item</li>
+            }
+
+        }
+    </ul>
+</div>
+<h1>@kurumAd</h1>
+<ul>
+    @{
+        foreach (string ad in adlar)
+        {
+            <li style="list-style:none;color:red">@ad</li>
+        }
+    }
+</ul>
+
