@@ -1,101 +1,24 @@
-﻿@{ 
-    Layout = "Layout";
-}
+﻿
+@model List<DersBlogSitesi.Models.Article>
 <div class="">
     <div class="row">
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        @{ foreach (var item in Model)
+            {
+                <div class="col-sm-6">
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Header</h5>
+                            <p class="card-text">
+                                @item.Content
+                            </p>
+                            <a href="Home/@item.Header" id="@item.Header" class="btn btn-primary">Devamını Oku</a>
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+            }
+        }
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+
+        
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card mt-4">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque natus
-                        adipisci dignissimos ipsa incidunt illum repellat dolores fuga non quaerat qui aliquam
-                        tempora quibusdam explicabo, impedit est voluptatum vel labore magnam beatae quis sed
-                        sapiente. Dolorem, dolore qui reiciendis quaerat magni inventore suscipit nobis et, ipsum
-                        illo, id quia maiores quo delectus laudantium illum neque! Inventore eum dicta soluta non?
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

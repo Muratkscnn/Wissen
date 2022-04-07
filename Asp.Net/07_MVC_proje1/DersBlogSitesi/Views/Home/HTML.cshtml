@@ -1,0 +1,10 @@
+﻿@model List<DersBlogSitesi.Models.Article>
+
+@foreach (var item in Model)
+{
+    if (item.Header=="HTML")
+    {
+        <h1 class="text-center">@item.Header</h1>
+        <p class="container">@item.Content</p>
+    }
+}
