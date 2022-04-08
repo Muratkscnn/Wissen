@@ -1,19 +1,15 @@
-﻿using DersBlogSitesi.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DersBlogSitesi.Controllers
+namespace DersBlogSitesi.Models
 {
-    public class HomeController : Controller
+    public static class Repository
     {
-        
-
-        public IActionResult Index()
+        public static List<Article> AllArticles()
         {
-            List<Article> makaleler = new List<Article>
+            List<Article> articles = new List<Article>
             {
             new Article {ID=1, Header="HTML", Content="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus eveniet fugiat voluptate natus quia dolor modi corporis cumque ad, nostrum, vel cupiditate sapiente atque quibusdam pariatur magni molestias accusantium deleniti omnis harum ducimus iste placeat aperiam commodi! Eveniet, ipsam beatae quas, rerum repudiandae inventore quae, est reprehenderit laboriosam sequi sit!"},
             new Article { ID = 2, Header = "CSS", Content = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus eveniet fugiat voluptate natus quia dolor modi corporis cumque ad, nostrum, vel cupiditate sapiente atque quibusdam pariatur magni molestias accusantium deleniti omnis harum ducimus iste placeat aperiam commodi! Eveniet, ipsam beatae quas, rerum repudiandae inventore quae, est reprehenderit laboriosam sequi sit!" },
@@ -23,13 +19,7 @@ namespace DersBlogSitesi.Controllers
             new Article { ID = 6, Header = "JQuery", Content = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus eveniet fugiat voluptate natus quia dolor modi corporis cumque ad, nostrum, vel cupiditate sapiente atque quibusdam pariatur magni molestias accusantium deleniti omnis harum ducimus iste placeat aperiam commodi! Eveniet, ipsam beatae quas, rerum repudiandae inventore quae, est reprehenderit laboriosam sequi sit!" }
 
             };
-
-            return View(makaleler);
+            return articles;
         }
-        public IActionResult HTML()
-        {
-            return View(makaleler);
-        }
-       
     }
 }

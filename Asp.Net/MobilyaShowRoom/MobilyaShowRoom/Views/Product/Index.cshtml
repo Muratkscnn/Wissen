@@ -1,0 +1,44 @@
+﻿@model List<MobilyaShowRoom.Models.Product>
+
+@{ 
+    ViewBag.Title = "Products";
+    Layout = "_Layout";
+}
+<div class="container mt-4">
+
+    
+    <div class="row g-0">
+        @foreach (var item in Model)
+        {
+            //colorpicker gazeteduvar.com.tr
+        <div class="col-6">
+
+            <div class="card mb-3 mx-3 shadow-lg">
+                <div class="row g-0">
+
+                    <div class="col-md-6">
+                        <img src="https://koctas-img.mncdn.com/mnresize/600/600/productimages/1000436175/1000436175_1_MC/8828121186354_1614935880913.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body d-flex flex-column align-items-center justify-content-around h-75 bg-gradient">
+                            <h5 class="card-title">@item.ProductName</h5>
+                            <p class="card-text"><span>Açıklama: </span>@item.ProductDetail</p>
+
+                            <p class="card-text mb-0"><span>Fiyat: </span><small class="text-danger fw-bold">@item.Price TL</small></p>
+                            <div class="d-flex gap-4 justify-content-center align-items-center text-center mt-4">
+                                <a href="/product/GetProductDetail/@item.ID" class="btn btn-outline-primary">Detay'a Git</a>
+                                <a href="/Home" class="btn btn-outline-primary">Home</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            }
+
+
+
+

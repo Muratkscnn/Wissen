@@ -1,0 +1,29 @@
+﻿@model List<MobilyaShowRoom.Models.Product>
+@{
+    MobilyaShowRoom.Models.Product product = ViewBag.Product;
+    ViewBag.Title = product.ProductName + " Detayı";
+    Layout = "_Layout";
+}
+
+<div class="container mt-4">
+    <div class="card mb-3" >
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img src="https://koctas-img.mncdn.com/mnresize/600/600/productimages/1000436175/1000436175_1_MC/8828121186354_1614935880913.jpg" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body d-flex flex-column align-items-center justify-content-around h-75 bg-gradient">
+                    <h5 class="card-title">@product.ProductName</h5>
+                    <p class="card-text"><span>Açıklama: </span>@product.ProductDetail</p>
+                    <div class="d-flex gap-4 justify-content-center align-items-center text-center">
+                        <p class="card-text mb-0"><span>Fiyat: </span><small class="text-danger fw-bold">@product.Price TL</small></p>
+                        <a  href="#" class="btn btn-outline-primary">Hemen Al</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
