@@ -4,6 +4,7 @@ body{
 }
 .sliderContent{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 1000px;
     position: relative;
@@ -19,20 +20,15 @@ body{
 .sliderContent .prevSlide,
 .sliderContent .nextSlide{
     cursor:pointer;
-    position: absolute;
-    top:0px;
-    height: 91%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding:15px;
-    color:rgb(242, 246, 247);
+    color:black;
     font-weight: bold;
     font-size:20px;
     width: auto;
     transition: 0.6s ease;
-    /* height: 100%;
-    ÖDEV: prev ve next'in resmin yüksekliği ile aynı olmasını sağlayın.
-    */
 
 }
 
@@ -60,18 +56,18 @@ body{
     height: 15px;
     width: 15px;
     margin: 0 3px;
-    background-color: bisque;
+    background-color: #b7b7b7;
     border-radius: 50%;
     display: inline-block;
     transition: 0.5s;
 }
 
 .dots .dot:hover{
-    background-color: blue;
+    background-color: #f06730;
 }
 
 .active{
-    background-color: blue !important;
+    background-color: #f06730 !important;
 }
 .captionText{
     background-color: rgba(0, 0, 0, 0.3);
