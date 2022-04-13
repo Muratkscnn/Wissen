@@ -1,4 +1,4 @@
-﻿using DikenComTr_Clone.Models;
+﻿using Dikencomtr_clone.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace DikenComTr_Clone.Controllers
+namespace Dikencomtr_clone.Controllers
 {
     public class HomeController : Controller
     {

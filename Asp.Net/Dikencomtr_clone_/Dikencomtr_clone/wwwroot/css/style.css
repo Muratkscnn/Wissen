@@ -167,5 +167,10 @@ head{
 .footer-text p{
     color: white;
 }
+@media (max-width:1000px){
+    nav div ul{
+        flex-direction:column;
+    }
+}
 
 

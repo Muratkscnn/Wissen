@@ -1,6 +1,6 @@
 using System;
 
-namespace DikenComTr_Clone.Models
+namespace Dikencomtr_clone.Models
 {
     public class ErrorViewModel
     {
