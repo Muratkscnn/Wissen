@@ -190,13 +190,11 @@ head {
     padding: 20px;
     text-align: center;
 }
-#xxx{
-    display:none;
-}
+
     .footer-text p {
         color: white;
     }
-#btn {
+.togglebtn{
     display: none !important;
 }
     
@@ -211,8 +209,33 @@ head {
     nav div ul{
         flex-direction:column;
     }
-   
-    #xxx:checked ~li{
-       display:block !important;
-   }
+    .togglebtn{
+        display:initial !important;
+    }
+}
+.togglebtn{
+    background-color:transparent;
+    border:none;
+    outline:none !important;
+    cursor:pointer;
+    display:inline;
+}
+.togglebtn .line{
+    display:block;
+    width:40px;
+    height:3px;
+    background-color:black;
+    margin-block:10px;
+    border-radius:4px;
+    transition:transform .5s, opacity .25s;
+}
+    
+    .togglebtn.click .line:nth-child(1) {
+        transform: translateY(13px) rotate(45deg);
+    }
+.togglebtn.click .line:nth-child(2){
+    opacity:0;
+}
+.togglebtn.click .line:nth-child(3){
+   transform:translateY(-13px) rotate(-45deg);
 }

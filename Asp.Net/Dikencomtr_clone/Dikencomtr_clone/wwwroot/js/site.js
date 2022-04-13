@@ -1,3 +1,6 @@
-﻿////$("#btn").click(function () {
-////    $("nav div ul li").toggle();
-////})
+﻿
+$(".togglebtn").click(function () {
+    $(".togglebtn").toggleClass("click");
+    $("nav div ul li").toggle();
+
+})
