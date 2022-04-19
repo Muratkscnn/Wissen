@@ -1,0 +1,23 @@
+@model EF_Core_MVC_Code.Models.Yayinevleri
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>YayinEvi Ekleme</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label class="control-label"> YayinEvi Adı</label>
+                <input type="text" asp-for="Ad" class="form-control">
+                <label class="control-label"> Adres</label>
+                <input type="text" asp-for="Adres" class="form-control">
+                <label class="control-label"> Telefon No</label>
+                <input type="text" asp-for="Tel" class="form-control">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success">
+                <a asp-action="Index" class="btn btn-danger">Geri</a>
+            </div>
+        </form>
+    </div>
+</div>

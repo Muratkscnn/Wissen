@@ -1,0 +1,25 @@
+@model EF_Core_MVC_Code.Models.Yayinevleri
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1>Yayın Evi Düzenleme</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group d-flex flex-column">
+                <label class="control-label">Yayın Evi ID</label>
+                <label class="control-label" >@Model.Id</label> 
+                <label class="control-label">Yayin Evi Adı</label>
+                <input class="form-control" type="text" asp-for="Ad">
+                <label class="control-label">Adres</label>
+                <input class="form-control" type="text" asp-for="Adres">
+                <label class="control-label">Telefon No</label>
+                <input class="form-control" type="text" asp-for="Tel">
+            </div>
+            <div>
+                <input type="submit" value="Değişikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
