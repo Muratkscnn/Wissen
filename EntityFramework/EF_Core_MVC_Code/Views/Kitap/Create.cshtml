@@ -1,0 +1,31 @@
+@model EF_Core_MVC_Code.Models.Kitaplar
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Kitap Ekleme</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label class="control-label"> Kitap ISBN</label>
+                <input type="text" asp-for="Isbn" class="form-control">
+                <label class="control-label"> Kitap Adı</label>
+                <input type="text" asp-for="Ad" class="form-control">
+                <label class="control-label"> Sayfa Sayısı</label>
+                <input type="text" asp-for="SayfaSayisi" class="form-control">
+                <label class="control-label">Stok</label>
+                <input type="text" asp-for="Stok" class="form-control">
+                <label class="control-label">Tür Adı</label>
+                <select asp-for="TurId" class="form-select form-control" asp-items="ViewBag.Tur"></select>
+                <label class="control-label">Yazarı</label>
+                <select asp-for="YazarId" class="form-select form-control" asp-items="ViewBag.Yazar"></select>
+                <label class="control-label">Yayin Evi</label>
+                <select asp-for="YayinEviId" class="form-select form-control" asp-items="ViewBag.YayinEvi"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-success">
+                <a asp-action="Index" class="btn btn-danger">Geri</a>
+            </div>
+        </form>
+    </div>
+</div>

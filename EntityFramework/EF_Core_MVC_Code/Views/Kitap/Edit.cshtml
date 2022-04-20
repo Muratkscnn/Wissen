@@ -1,0 +1,33 @@
+@model EF_Core_MVC_Code.Models.Kitaplar
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1 class="display-3">@Model.Ad - Kitap Düzenleme Sayfası</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group d-flex flex-column">
+                <label class="control-label"> Kitap ISBN</label>
+                <input type="text" asp-for="Isbn" class="form-control">
+                <label class="control-label"> Kitap Adı</label>
+                <input type="text" asp-for="Ad" class="form-control">
+                <label class="control-label"> Sayfa Sayısı</label>
+                <input type="text" asp-for="SayfaSayisi" class="form-control">
+                <label class="control-label">Stok</label>
+                <input type="text" asp-for="Stok" class="form-control">
+                <label class="control-label">Tür Adı</label>
+                <select asp-for="TurId" class="form-select form-control" asp-items="ViewBag.Tur"></select>
+                <label class="control-label">Yazarı</label>
+                <select asp-for="YazarId" class="form-select form-control" asp-items="ViewBag.Yazar"></select>
+                <label class="control-label">Yayin Evi</label>
+                <select asp-for="YayinEviId" class="form-select form-control" asp-items="ViewBag.YayinEvi"></select>
+
+
+            </div>
+            <div>
+                <input type="submit" value="Değişikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

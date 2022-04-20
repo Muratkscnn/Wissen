@@ -1,0 +1,24 @@
+@model EF_Core_MVC_Code.Models.Kitaplar
+
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+<h1>Kitap Detayları</h1>
+
+<div>
+    <h5>Kitap ISBN:</h5>
+    <p>@Model.Isbn</p>
+    <h5>Kitap Adı</h5>
+    <p>@Model.Ad</p>
+    <h5>Sayfa Sayısı</h5>
+    <p>@Model.SayfaSayisi</p>
+    <h5>Stok</h5>
+    <p>@Model.Stok</p>
+    <h5>Tür Adı</h5>
+    <p>@Model.Tur.TurAd</p>
+    <h5>Yazarı</h5>
+    <p>@Model.Yazar.AdSoyad</p>
+    <h5>Yayın Evi</h5>
+    <p>@Model.YayinEvi.Ad</p>
+</div>
+<a asp-action="Index">Geri Dön</a>
