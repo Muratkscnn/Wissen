@@ -1,0 +1,24 @@
+@model EF_CodeFirst.Models.Entities.Category
+@{
+    ViewData["Title"] = "Edit";
+}
+<h1 class="display-3"> Kitap Türü Düzenle</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group d-flex flex-column">
+                <label class="control-label">Tür ID</label>
+                <label class="control-label" >@Model.CategoryId</label> 
+                <input class="form-control d-none" type="text" asp-for="CategoryId">
+                <label class="control-label">Kitap Türü</label>
+                <input class="form-control" type="text" asp-for="CategoryName">
+                <label class="control-label">Tür İçeriği</label>
+                <input class="form-control" type="text" asp-for="CategoryDescription">
+            </div>
+            <div>
+                <input type="submit" value="Değişikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+@model EF_CodeFirst.Models.Entities.Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1 class="display*3">Kategori silme</h1>
+<div>
+    <p>Category ID</p>
+    <p>@Model.CategoryId</p>
+    <p>Category Name</p>
+    <p>@Model.CategoryName</p>
+    <p>CategoryDescription</p>
+    <p>@Model.CategoryDescription</p>
+    <form asp-action="Delete">
+        <input class="d-none" type="text" asp-for="CategoryId">
+        <input class="d-none" type="text" asp-for="CategoryName">
+        <input class="d-none" type="text" asp-for="CategoryDescription">
+    <input type="submit" value="SİL" class="btn btn-danger">
+    </form>
+</div>
