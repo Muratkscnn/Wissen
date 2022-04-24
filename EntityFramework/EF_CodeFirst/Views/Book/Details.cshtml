@@ -1,0 +1,26 @@
+@model EF_CodeFirst.Models.Entities.Book
+
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+<h1>Kitap Detayları</h1>
+
+<div>
+    <h5>Kitap Id:</h5>
+    <p>@Model.BookId</p>
+    <h5>Kitap Adı</h5>
+    <p>@Model.BookName</p>
+    <h5>Sayfa Sayısı</h5>
+    <p>@Model.BookNumberOfPages</p>
+    <h5>Çıkış Tarihi</h5>
+    <p>@Model.BookYearOfPublication</p>
+    <h5>Stok</h5>
+    <p>@Model.BookQuantity</p>
+    <h5>Tür Adı</h5>
+    <p>@Model.Category.CategoryName</p>
+    <h5>Yazarı</h5>
+    <p>@Model.Author.AuthorName</p>
+    <h5>Yayın Evi</h5>
+    <p>@Model.Publisher.PublisherName</p>
+</div>
+<a asp-action="Index">Geri Dön</a>

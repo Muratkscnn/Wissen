@@ -1,0 +1,35 @@
+@model EF_CodeFirst.Models.Entities.Book
+
+@{
+    ViewData["Title"] = "Kitaplar";
+}
+
+<h1 >@Model.BookName - Kitap Düzenleme Sayfası</h1>
+<hr>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div class="form-group d-flex flex-column">
+               <label class="control-label"> Kitap Adı</label>
+                <input type="text" asp-for="BookName" class="form-control">
+                <label class="control-label"> Sayfa Sayısı</label>
+                <input type="text" asp-for="BookNumberOfPages" class="form-control">
+                <label class="control-label">Çıkış Yılı</label>
+                <input type="text" asp-for="BookYearOfPublication" class="form-control">
+                 <label class="control-label">Baskı Numarası</label>
+                <input type="text" asp-for="BookEditionNumber" class="form-control">
+                <label class="control-label">Stok</label>
+                <input type="text" asp-for="BookQuantity" class="form-control">
+                <label class="control-label">Tür Adı</label>
+                <select asp-for="CategoryId" class="form-select form-control" asp-items="ViewBag.Category"></select>
+                <label class="control-label">Yazarı</label>
+                <select asp-for="AuthorId" class="form-select form-control" asp-items="ViewBag.Author"></select>
+                <label class="control-label">Yayin Evi</label>
+                <select asp-for="PublisherId" class="form-select form-control" asp-items="ViewBag.Publisher"></select>
+            </div>
+            <div>
+                <input type="submit" value="Değişikleri Kaydet" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>

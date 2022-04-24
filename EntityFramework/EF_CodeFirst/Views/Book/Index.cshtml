@@ -1,0 +1,33 @@
+@model List<EF_CodeFirst.Models.Entities.Book>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>Kitap Listesi</h1>
+
+<a asp-action="Create">New Book</a>
+
+<table class="table table dark w-50">
+    <thead>
+        <tr>
+            <th>Kitap ID</th>
+            <th>Kitap Adı</th>
+            <th >Yapılacak İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BookId</td>
+                    <td>@item.BookName</td>
+                    <td>
+                        <a class="btn btn-success" asp-action="Details" asp-route-id="@item.BookId">Detay</a>
+                        <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.BookId">Düzenle</a>
+                        <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.BookId">Sil</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
