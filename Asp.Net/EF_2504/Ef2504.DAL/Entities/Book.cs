@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Ef2504.DAL.Entities
 {
@@ -11,8 +12,8 @@ namespace Ef2504.DAL.Entities
         public DateTime BookCreatedDate { get; set; }
         public int? CategoryId { get; set; }
         public Category Category { get; set; }
+        public List<BookAuthor> BookAuthor { get; set; }
 
-
-
+        public BookDetail BookDetail { get; set; }
     }
 }
