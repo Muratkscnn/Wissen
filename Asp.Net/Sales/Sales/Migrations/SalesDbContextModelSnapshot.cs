@@ -43,6 +43,9 @@ namespace Sales.Migrations
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 

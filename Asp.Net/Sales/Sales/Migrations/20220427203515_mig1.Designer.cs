@@ -9,7 +9,7 @@ using Sales.Models.Concrete;
 namespace Sales.Migrations
 {
     [DbContext(typeof(SalesDbContext))]
-    [Migration("20220427102950_mig1")]
+    [Migration("20220427203515_mig1")]
     partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,6 +44,9 @@ namespace Sales.Migrations
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
