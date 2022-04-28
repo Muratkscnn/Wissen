@@ -22,8 +22,8 @@ namespace Sales.Models.Concrete
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Server=DESKTOP-8M7D7GE\\SQLEXPRESS;Database=SalesDbSabah;Trusted_Connection=true;");
-            optionsBuilder.UseSqlServer("Server=MK\\SQLEXPRESS;Database=SalesDbSabah;Trusted_Connection=true;");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-8M7D7GE\\SQLEXPRESS;Database=SalesDbSabah;Trusted_Connection=true;");
+           // optionsBuilder.UseSqlServer("Server=MK\\SQLEXPRESS;Database=SalesDbSabah;Trusted_Connection=true;");
 
         }
     }

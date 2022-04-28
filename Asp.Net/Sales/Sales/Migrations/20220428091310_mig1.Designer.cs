@@ -9,7 +9,7 @@ using Sales.Models.Concrete;
 namespace Sales.Migrations
 {
     [DbContext(typeof(SalesDbContext))]
-    [Migration("20220427203515_mig1")]
+    [Migration("20220428091310_mig1")]
     partial class mig1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
