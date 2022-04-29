@@ -10,7 +10,7 @@ const LibraryModel=require("./models/Library")
 app.use(express.json())
 app.use(cors())
 
-mongoose.connect("mongodb+srv://admin:1234@cluster0.c873i.mongodb.net/LibrarySabah?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://admin:1234@cluster0.c873i.mongodb.net/fullstack?retryWrites=true&w=majority")
 //Employee Projesi
 // app.get("/getEmployees",(req,res)=>{
 //     EmployeModel.find({},(err,result) => {
@@ -50,7 +50,7 @@ app.post("/createLibrary", async (req,res)=>{
     await newLibrary.save()
     res.json(library)
 })
-app.listen(3040,() => {
+app.listen(3030,() => {
     console.log("SERVER ÇALIŞIYOR")
 });
 
