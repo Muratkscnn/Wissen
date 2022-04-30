@@ -1,23 +1,24 @@
 ﻿@model List<Sales.Models.Entities.Product>
 
+
+<div class="container">
     <a asp-action="create" class="btn btn-success mb-2">New Product</a>
+7
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-3">
 
-    <div class="container">
-        <div class="row">
-            @foreach (var item in Model)
-            {
-                <div class="col-3" >
-
-                    <div class="card">
-                        <img class="card-img-top" src="@item.ImageURL" style="height:16rem;" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">@item.ProductName</h5>
-                            <p class="card-text">@item.ProductPrice TL</p>
-                            <a asp-action="Detail" class="btn btn-primary">Detaylar</a>
-                        </div>
+                <div class="card">
+                    <img class="card-img-top" src="@item.ImageURL" style="height:16rem;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ProductName</h5>
+                        <p class="card-text">@item.ProductPrice TL</p>
+                        <a asp-action="Detail" class="btn btn-primary">Detaylar</a>
                     </div>
                 </div>
-            }
+            </div>
+        }
 
-        </div>
     </div>
+</div>

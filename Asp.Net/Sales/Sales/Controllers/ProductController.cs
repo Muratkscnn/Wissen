@@ -40,7 +40,7 @@ namespace Sales.Controllers
             }
             var products = new ProductDAL();
             products.Add(product);
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }
