@@ -13,7 +13,5 @@ namespace EntityLayer.Concrete
         public Student Student { get; set; }
         public int LessonId { get; set; }
         public Lesson Lesson { get; set; }
-
-
     }
 }

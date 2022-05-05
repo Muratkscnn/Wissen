@@ -21,18 +21,22 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.CourseSelection", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
+                    b.Property<int>("CourseSelectionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("LessonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CourseSelectionId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.HasKey("StudentId", "LessonId");
+                    b.HasKey("CourseSelectionId");
 
                     b.HasIndex("LessonId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("CourseSelections");
                 });

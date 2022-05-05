@@ -9,6 +9,8 @@
         <td>Öğrenci Adı</td>
         <td>Öğrenci Soyadı</td>
         <td>Öğrenci Departmanı</td>
+        <td>Doğum Tarihi</td>
+        <td>Kayıt Tarihi</td>
         <td>Dönemi</td>
     </tr>
     @foreach (var item in Model)
@@ -17,6 +19,8 @@
             <td>@item.StudentFirstName</td>
             <td>@item.StudentLastName</td>
             <td>@item.Departman.DepartmanName</td>
+            <td>@(((DateTime)item.StudentBirthDay).ToString("dd-MMM-yyyy"))</td>
+            <td>@(((DateTime)item.StudentRegisterDate).ToString("dd-MMM-yyyy"))</td>
             <td>@item.PeriodId</td>
         </tr>
     }

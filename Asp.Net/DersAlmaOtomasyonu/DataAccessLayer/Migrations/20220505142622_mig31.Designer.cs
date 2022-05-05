@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220505112906_mig1")]
-    partial class mig1
+    [Migration("20220505142622_mig31")]
+    partial class mig31
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,18 +23,22 @@ namespace DataAccessLayer.Migrations
 
             modelBuilder.Entity("EntityLayer.Concrete.CourseSelection", b =>
                 {
-                    b.Property<int>("StudentId")
-                        .HasColumnType("int");
+                    b.Property<int>("CourseSelectionId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("LessonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CourseSelectionId")
+                    b.Property<int>("StudentId")
                         .HasColumnType("int");
 
-                    b.HasKey("StudentId", "LessonId");
+                    b.HasKey("CourseSelectionId");
 
                     b.HasIndex("LessonId");
+
+                    b.HasIndex("StudentId");
 
                     b.ToTable("CourseSelections");
                 });

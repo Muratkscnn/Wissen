@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace DataAccessLayer.Migrations
 {
-    public partial class mig1 : Migration
+    public partial class mig31 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -90,13 +90,14 @@ namespace DataAccessLayer.Migrations
                 name: "CourseSelections",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(type: "int", nullable: false),
-                    LessonId = table.Column<int>(type: "int", nullable: false),
                     CourseSelectionId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StudentId = table.Column<int>(type: "int", nullable: false),
+                    LessonId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CourseSelections", x => new { x.StudentId, x.LessonId });
+                    table.PrimaryKey("PK_CourseSelections", x => x.CourseSelectionId);
                     table.ForeignKey(
                         name: "FK_CourseSelections_Lessons_LessonId",
                         column: x => x.LessonId,
@@ -115,6 +116,11 @@ namespace DataAccessLayer.Migrations
                 name: "IX_CourseSelections_LessonId",
                 table: "CourseSelections",
                 column: "LessonId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CourseSelections_StudentId",
+                table: "CourseSelections",
+                column: "StudentId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Lessons_PeriodId",
