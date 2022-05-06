@@ -14,6 +14,7 @@ namespace BusinessLayer.Abstract
         void StudentUpdate(Student student);
         List<Student> GetList();
         List<Student> GetListWithDepartman();
+        Student GetByIdWithCourses(int id);
 
         Student GetById(int id);
     }

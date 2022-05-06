@@ -20,5 +20,16 @@ namespace DataAccessLayer.EntityFramework
                 return c.Students.Include(c => c.Departman).ToList();
             }
         }
+        public Student GetByIdWithCourses(int id)
+        {
+            using (var context = new Context())
+            {
+                return context.Students
+                    .Where(x => x.StudentId == id)
+                    .Include(x => x.CourseSelections)
+                    .ThenInclude(x => x.Lesson)
+                    .FirstOrDefault();
+            }
+        }
     }
 }
