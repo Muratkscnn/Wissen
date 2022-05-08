@@ -12,20 +12,30 @@
         <td>Doğum Tarihi</td>
         <td>Kayıt Tarihi</td>
         <td>Dönemi</td>
+        <td>Aldığı Dersler</td>
+        
         <td>Ders Atama</td>
         
     </tr>
     @foreach (var item in Model)
     {
-        <tr>
-            <td>@item.StudentFirstName</td>
-            <td>@item.StudentLastName</td>
-            <td>@item.Departman.DepartmanName</td>
-            <td>@(((DateTime)item.StudentBirthDay).ToString("dd-MMM-yyyy"))</td>
-            <td>@(((DateTime)item.StudentRegisterDate).ToString("dd-MMM-yyyy"))</td>
-            <td>@item.PeriodId</td>
-            <td><a asp-controller="Student" asp-action="DersAtama" asp-route-id="@item.StudentId" class="btn btn-sm btn-primary">Assign Lesson</a></td>
-        </tr>
+<tr>
+    <td>@item.StudentFirstName</td>
+    <td>@item.StudentLastName</td>
+    <td>@item.Departman.DepartmanName</td>
+    <td>@(((DateTime)item.StudentBirthDay).ToString("dd-MMM-yyyy"))</td>
+    <td>@(((DateTime)item.StudentRegisterDate).ToString("dd-MMM-yyyy"))</td>
+    <td>@item.PeriodId</td>
+    <td>
+        @for (int i = 0; i < item.CourseSelections.Count; i++)
+        {
+             <p>@item.CourseSelections[i].Lesson.LessonName</p>
+             <br />
+
+         }
+        </td>
+        <td><a asp-controller="Student" asp-action="DersAtama" asp-route-id="@item.StudentId" class="btn btn-sm btn-primary">Assign Lesson</a></td>
+    </tr>
     }
 </table>
 

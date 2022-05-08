@@ -15,7 +15,6 @@ namespace UI.Controllers
         public IActionResult Index()
         {
             var values = sm.GetListWithDepartman();
-                
             return View(values);
         }
         public IActionResult DersAtama(int id)

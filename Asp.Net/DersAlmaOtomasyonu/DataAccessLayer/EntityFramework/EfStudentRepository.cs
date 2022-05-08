@@ -17,7 +17,7 @@ namespace DataAccessLayer.EntityFramework
         {
             using (var c=new Context())
             {
-                return c.Students.Include(c => c.Departman).ToList();
+                return c.Students.Include(c => c.Departman).Include(x=>x.CourseSelections).ThenInclude(x=>x.Lesson).ToList();
             }
         }
         public Student GetByIdWithCourses(int id)
