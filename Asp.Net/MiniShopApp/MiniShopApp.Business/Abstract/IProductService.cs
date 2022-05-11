@@ -14,5 +14,7 @@ namespace MiniShopApp.Business.Abstract
         void Delete(Product entity);
         Product GetById(int id);
         List<Product> GetAll();
+        List<Product> GetProductsByCategory(string name);
+
     }
 }

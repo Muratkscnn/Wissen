@@ -39,6 +39,11 @@ namespace MiniShopApp.Business.Concrete
             return _productRepository.GetById(id);
         }
 
+        public List<Product> GetProductsByCategory(string name)
+        {
+            return _productRepository.GetProductsByCategory(name);
+        }
+
         public void Update(Product entity)
         {
              _productRepository.Update(entity);
