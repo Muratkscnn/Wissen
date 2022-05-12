@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MiniShopApp.Business.Abstract;
+using MiniShopApp.Entity;
+using MiniShopApp.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,26 @@ namespace MiniShopApp.WebUI.Controllers
         {
 
             return View(_product.GetProductsByCategory(Category)); 
+        }
+        public IActionResult Details(string url)
+        {
+            if (url==null)
+            {
+                return NotFound();
+            }
+            Product product = _product.GetProductDetails(url);
+            if (product==null)
+            {
+                return NotFound();
+            }
+            ProductDetailModel productDetail = new ProductDetailModel() { Product = product, Categories = product.ProductCategories.Select(x => x.Category).ToList() };
+            return View(productDetail);
+        }
+        [HttpPost]
+        public IActionResult Search(string q)
+        {
+            
+            return View(_product.GetSearchResult(q));
         }
     }
 }

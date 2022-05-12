@@ -20,7 +20,7 @@ namespace MiniShopApp.WebUI.Controllers
 
         public IActionResult Index()
         {
-           var values= _productService.GetAll();
+           var values= _productService.GetHomePageProducts();
             return View(values);
         }
     }

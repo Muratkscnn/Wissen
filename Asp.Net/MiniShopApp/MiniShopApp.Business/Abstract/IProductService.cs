@@ -15,6 +15,11 @@ namespace MiniShopApp.Business.Abstract
         Product GetById(int id);
         List<Product> GetAll();
         List<Product> GetProductsByCategory(string name);
+        Product GetProductDetails(string url);
+        List<Product> GetHomePageProducts();
+        List<Product> GetSearchResult(string searchString);
+
+
 
     }
 }
