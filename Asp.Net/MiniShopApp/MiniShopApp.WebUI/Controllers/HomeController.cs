@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MiniShopApp.Business.Abstract;
+using MiniShopApp.WebUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,7 +21,9 @@ namespace MiniShopApp.WebUI.Controllers
 
         public IActionResult Index()
         {
-           var values= _productService.GetHomePageProducts();
+            
+
+            var values = _productService.GetHomePageProducts();
             return View(values);
         }
     }

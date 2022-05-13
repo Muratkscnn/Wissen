@@ -22,10 +22,18 @@ namespace MiniShopApp.WebUI.Controllers
         {
             return View();
         }
-        public IActionResult List(string Category)
+        public IActionResult List(string Category,int page=1)
         {
-
-            return View(_product.GetProductsByCategory(Category)); 
+            ViewBag.AlertType = "Success";
+            ViewBag.Message = "Ürün Bulunamadı";
+            const int pageSize = 3;
+            var totalItems = _product.GetCountByCategory(Category);
+            var productListViewModel = new ProductListViewModel()
+            {
+                PageInfo = new PageInfo { TotalItems = totalItems, CurrentPage = page, ItemsPerPage = pageSize, CurrentCategory = Category },
+                Products = _product.GetProductsByCategory(Category,page,pageSize)
+            };
+            return View(productListViewModel); 
         }
         public IActionResult Details(string url)
         {
