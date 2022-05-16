@@ -36,7 +36,7 @@ namespace MiniShopApp.WebUI.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult ProductCreate(ProductModel model,int[] categorysIds)
+        public IActionResult ProductCreate(ProductModel model,int[] categoryIds)
         {
             var product = new Product()
             {
@@ -48,7 +48,7 @@ namespace MiniShopApp.WebUI.Controllers
                 IsApproved = model.IsApproved,
                 IsHome = model.IsHome
             };
-            _productService.Create(product,categorysIds);
+            _productService.Create(product,categoryIds);
             return RedirectToAction("ProductList");
         }
     }
