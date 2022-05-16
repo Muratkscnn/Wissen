@@ -78,5 +78,20 @@ namespace MiniShopApp.Data.Concrete.EfCore
                 return products.Count();
             }
         }
+
+        public void Create(Product entity, int[] categoryIds)
+        {
+            using (var context = new MiniShopContext())
+            {
+                context.Products.Add(entity);
+                context.SaveChanges();
+                entity.ProductCategories = categoryIds.Select(catId => new ProductCategory
+                {
+                    ProductId = entity.ProductId,
+                    CategoryId = catId
+                }).ToList();
+                context.SaveChanges();
+            }
+        }
     }
 }

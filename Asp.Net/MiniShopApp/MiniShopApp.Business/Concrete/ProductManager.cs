@@ -23,6 +23,11 @@ namespace MiniShopApp.Business.Concrete
             _productRepository.Create(entity);
         }
 
+        public void Create(Product entity, int[] categoryIds)
+        {
+            _productRepository.Create(entity, categoryIds);
+        }
+
         public void Delete(Product entity)
         {
             _productRepository.Delete(entity);
