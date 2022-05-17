@@ -40,7 +40,7 @@ namespace MiniShopApp.Data.Concrete.EfCore
         {
             using (var context = new TContext())
             {
-                return context.Set<TEntity>().SingleOrDefault();
+                return context.Set<TEntity>().Find(id);
             }
         }
 

@@ -33,8 +33,9 @@
                             }
                             else
                             {
-                                <i class="fa-solid fa-circle-check text-success"></i>
+                                <i class="fa-solid fa-circle-xmark text-danger"></i>
                             }
+                           
                         </td>
                         <td>
                             @if (item.IsApproved)
@@ -43,14 +44,24 @@
                             }
                             else
                             {
-                                <i class="fa-solid fa-circle-check text-success"></i>
+                                <i class="fa-solid fa-circle-xmark text-danger"></i>
+
                             }
+
+                            <form action="/Admin/IsApprovedPassive" class="d-inline" method="post">
+                                <input type="hidden" name="ProductId" value="@item.ProductId" />
+                                <button type="submit" class="btn btn-sm btn-danger">Pasif</button>
+                            </form>
+                            <form action="/Admin/IsApprovedActive" class="d-inline" method="post">
+                                <input type="hidden" name="ProductId" value="@item.ProductId" />
+                                <button type="submit" class="btn btn-sm btn-success">Aktif</button>
+                            </form>
                         </td>
                         <td>@item.Price</td>
                         <td>
                             <a href="/admin/products/@item.ProductId" class="btn btn-primary">Edit</a>
 
-                            <form action="/" class="d-inline" method="post">
+                            <form action="/Admin/ProductDelete" class="d-inline" method="post">
                                 <input type="hidden" name="ProductId" value="@item.ProductId" />
                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                             </form>
